@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Диалоговая переменная
 [CreateAssetMenu(fileName = "DialogeSystem", menuName = "DialogeSystem/DialogeNode", order = 1)]
 public class SO_DialogueNode : ScriptableObject
 {
-    [SerializeField] string DialogueID;
+    [SerializeField] private string DialogueID;
     enum Actor
     {
         Object,
         NPC
     }
-    [SerializeField] Actor ActorType;
+    [SerializeField] private Actor ActorType;
 
-    [SerializeField] List<string> DialogueText;
-    [SerializeField] List<Answer> MyAnswer;
+    [SerializeField] private List<string> DialogueText;
+    [SerializeField] private List<Answer> MyAnswer;
 
     [System.Serializable]
     public class Answer
@@ -24,11 +25,6 @@ public class SO_DialogueNode : ScriptableObject
         [SerializeField] bool isEnd;
     }
 
-
-
-    
-
-
-   
+    public List<string> GetDialogueText { get { return DialogueText; } }
 }
 

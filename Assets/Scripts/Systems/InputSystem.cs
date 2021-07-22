@@ -1,10 +1,8 @@
 using UnityEngine;
 
-
+//Система оперирует вводными данными игрока
 public class InputSystem : MySystem
 {
-    //Система оперирует вводными данными игрока
-
     [SerializeField] MovementSystem movementSys;
     [SerializeField] InteractionSystem interactionSystem;
 

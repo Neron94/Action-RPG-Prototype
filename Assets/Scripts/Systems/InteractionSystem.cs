@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Система обеспечивает проверку Интерактивна ли сущность по которой произошел клик
 public class InteractionSystem : MySystem
 {
-
-    [SerializeField] float interactionDistace = 2; //По умолчанию для этой сцены
+    [SerializeField] float interactionDistace = 2; //Оптимальная дистанция до интерактивного обьекта По умолчанию для этой сцены
 
     public GameObject IsHaveObjectOnRay()
     {
@@ -28,16 +28,4 @@ public class InteractionSystem : MySystem
         }
         else return null;
     }
-
-    /*
-    void OnWhoCollide()
-    {
-        switch (gameObject.tag)
-        {
-            case "NPC":
-                break;
-            case "Item":
-                break;
-        }
-    }*/
 }

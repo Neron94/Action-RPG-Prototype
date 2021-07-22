@@ -864,6 +864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameEntity: 
+  dialogueSystem: {fileID: 1517962367}
+  npcDialogueTree: {fileID: 11400000, guid: d540595ea9ff4a04c9d98ed183fef689, type: 2}
 --- !u!136 &278938814
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1130,7 +1132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4173928640638388097, guid: bc29bbb29749f824285ece7b3ecb5362, type: 3}
       propertyPath: m_Name
-      value: Margaret [NPC]
+      value: '[NPC] Margaret '
       objectReference: {fileID: 0}
     - target: {fileID: 4173928640638388097, guid: bc29bbb29749f824285ece7b3ecb5362, type: 3}
       propertyPath: m_TagString
@@ -3566,7 +3568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2590403763501899464, guid: 2d4653c987b545a4fa7cb58db5137199, type: 3}
       propertyPath: m_Name
-      value: Shawn [Player]
+      value: '[Player] Shawn'
       objectReference: {fileID: 0}
     - target: {fileID: 3654539212236073785, guid: 2d4653c987b545a4fa7cb58db5137199, type: 3}
       propertyPath: interactionSystem
@@ -3769,6 +3771,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
+--- !u!1 &1517962366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517962368}
+  - component: {fileID: 1517962367}
+  - component: {fileID: 1517962369}
+  m_Layer: 0
+  m_Name: GameHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1517962367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517962366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f476058659234ac41aef31a6b8492d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueToUi: {fileID: 0}
+--- !u!4 &1517962368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517962366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.13271, y: -148.6152, z: 148.6973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1517962369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517962366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa76dd80fb9e0c4fb8a40da2aed084b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1647762200
 PrefabInstance:
   m_ObjectHideFlags: 0

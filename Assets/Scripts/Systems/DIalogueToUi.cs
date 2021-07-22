@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Параметры и настройки Монстров
-public class Monster : _Entity
+//Верстка диалогов в Интерфейс
+public class DIalogueToUi : MonoBehaviour
 {
 
 }

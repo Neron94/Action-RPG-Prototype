@@ -1,9 +1,7 @@
 using UnityEngine;
-
+//Система обеспечивает перемещение сущностей
 public class MovementSystem : MySystem
 {
-    //Система обеспечивает перемещение сущностей
-
     [SerializeField] IGetSpeed speedOfMyEntity; //Адаптер для передачи скорости собственной сущности
     [SerializeField] ISetAnimation setAnimation; // Адаптер для передачи команд аниматору
 

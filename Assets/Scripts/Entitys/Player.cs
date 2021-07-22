@@ -1,10 +1,9 @@
 using UnityEngine;
 
+//Параметры и настройки персонажа игрока
 public class Player : _Entity, IGetSpeed
 {
     [SerializeField] SO_EntityStats myStats;
-
-
 
     public float GetSpeed()
     {
@@ -19,6 +18,7 @@ public class Player : _Entity, IGetSpeed
         }
 
     }
+
     public float GetRotSpeed()
     {
         if (myStats != null) // Проверка подключены ли СТАТЫ

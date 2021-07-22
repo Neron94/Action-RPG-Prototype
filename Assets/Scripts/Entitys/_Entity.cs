@@ -1,9 +1,8 @@
 using UnityEngine;
 
+//Базовый класс (бирка) для сущностей
 public class _Entity : MonoBehaviour
 {
-    //Базовый класс (бирка) для сущностей
-
     [SerializeField] string nameEntity;
 
     private void Awake()

@@ -1,9 +1,8 @@
 using UnityEngine;
 
+// Система управления анимацией
 public class AnimationSystem : MySystem, ISetAnimation
 {
-    // Система управления анимацией
-
     [SerializeField] Animator myAnimator;
 
     private void Awake()
