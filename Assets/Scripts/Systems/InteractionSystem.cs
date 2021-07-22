@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionSystem : MonoBehaviour
+public class InteractionSystem : MySystem
 {
 
     [SerializeField] float interactionDistace = 2; //По умолчанию для этой сцены

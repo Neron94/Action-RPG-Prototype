@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AnimationSystem : MonoBehaviour, ISetAnimation
+public class AnimationSystem : MySystem, ISetAnimation
 {
     // Система управления анимацией
 
