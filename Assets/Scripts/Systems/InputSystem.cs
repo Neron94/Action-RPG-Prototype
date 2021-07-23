@@ -3,15 +3,21 @@ using UnityEngine;
 //Система оперирует вводными данными игрока
 public class InputSystem : MySystem
 {
-    [SerializeField] MovementSystem movementSys;
-    [SerializeField] InteractionSystem interactionSystem;
+    [SerializeField] IMoveTo movementSys;
+    [SerializeField] IInteractionRay interactionSys;
+
+    private void Awake()
+    {
+        movementSys = gameObject.GetComponent<IMoveTo>();
+        interactionSys = gameObject.GetComponent<IInteractionRay>();
+    }
 
     private void Update()
     {
         if (Input.GetMouseButton(1)) SendPosToMove();
         if (Input.GetMouseButtonUp(0))
         {
-            if (!interactionSystem.IsHaveObjectOnRay())
+            if (!interactionSys.IsHaveObjectOnRay())
             { 
                 SendPosToMove(); 
             }

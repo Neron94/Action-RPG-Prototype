@@ -8,7 +8,7 @@ public class AnimationSystem : MySystem, ISetAnimation
     private void Awake()
     {
         myAnimator = transform.GetComponent<Animator>();
-        if (myAnimator == null) Debug.LogError("No animator on this object"); // Проверка аниметора на обьекте
+        if (myAnimator == null) Debug.LogError("No animator on this object"); // Проверка аниматора на обьекте
     }
 
 

@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogeSystem", menuName = "DialogeSystem/DialogeNode", order = 1)]
 public class SO_DialogueNode : ScriptableObject
 {
+    [SerializeField] private string npcName;
     [SerializeField] private string DialogueID;
     enum Actor
     {
@@ -14,17 +15,37 @@ public class SO_DialogueNode : ScriptableObject
     }
     [SerializeField] private Actor ActorType;
 
-    [SerializeField] private List<string> DialogueText;
+    [SerializeField] private string DialogueText;
     [SerializeField] private List<Answer> MyAnswer;
+
+    public string GetNpcName { get { return npcName; } }
+    public List<Answer> GetAnswerList { get { return MyAnswer; } }
+    public string GetDialogueText { get { return DialogueText; } }
+
+
 
     [System.Serializable]
     public class Answer
     {
         [SerializeField] string text;
-        [SerializeField] ScriptableObject NextDialogue;
+        [SerializeField] SO_DialogueNode NextDialogue;
         [SerializeField] bool isEnd;
+
+        public string GetText { get { return text; } }
+        public SO_DialogueNode GetNextNode
+        {
+            get
+            {
+                if (!isEnd) return NextDialogue;
+                else
+                {
+                    Debug.Log("In This Node NextDialogue is Empty");
+                    return null;
+                }
+            }
+        }
+        public bool IsEnd => isEnd;
     }
 
-    public List<string> GetDialogueText { get { return DialogueText; } }
 }
 

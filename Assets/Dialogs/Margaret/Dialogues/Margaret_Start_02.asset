@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bcf00162788d0438815b45cd423a57, type: 3}
   m_Name: Margaret_Start_02
   m_EditorClassIdentifier: 
+  npcName: Margeret
   DialogueID: 3
   ActorType: 1
-  DialogueText:
-  - "\u041E \u044D\u0442\u043E \u0442\u044B! \u041D\u0435 \u043F\u043E\u0432\u0441\u0442\u0440\u0435\u0447\u0430\u043B\u0441\u044F
-    \u043B\u0438 \u0442\u0435\u0431\u0435 \u043C\u043E\u0439 \u043F\u043E\u0441\u043E\u0445?"
+  DialogueText: "\u041D\u0443 \u043A\u0430\u043A!? \u043D\u0435 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u043B
+    \u043C\u043E\u0439 \u043F\u043E\u0441\u043E\u0445?"
   MyAnswer:
   - text: "\u0412\u0437\u0433\u043B\u044F\u043D\u0438, \u044D\u0442\u043E \u043E\u043D?"
     NextDialogue: {fileID: 11400000, guid: 9a0a2c1e787fb3846aec26b4ddc89c92, type: 2}

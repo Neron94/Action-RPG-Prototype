@@ -1,6 +1,6 @@
 using UnityEngine;
 //Система обеспечивает перемещение сущностей
-public class MovementSystem : MySystem
+public class MovementSystem : MySystem, IMoveTo
 {
     [SerializeField] IGetSpeed speedOfMyEntity; //Адаптер для передачи скорости собственной сущности
     [SerializeField] ISetAnimation setAnimation; // Адаптер для передачи команд аниматору

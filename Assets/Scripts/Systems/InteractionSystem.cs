@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Система обеспечивает проверку Интерактивна ли сущность по которой произошел клик
-public class InteractionSystem : MySystem
+public class InteractionSystem : MySystem, IInteractionRay
 {
     [SerializeField] float interactionDistace = 2; //Оптимальная дистанция до интерактивного обьекта По умолчанию для этой сцены
 
