@@ -56,12 +56,10 @@ public class DIalogueToUi : MonoBehaviour, IDIalogueToUI
     }
     public void StartDialogueWindow() { dialogueWindow.SetActive(true); }
     public void EndDialogueWindow() { dialogueWindow.SetActive(false); }
-    
     public void OperateButtonClick(int butNum)
     {
         SO_DialogueNode.Answer answer = curNode.GetAnswerList[butNum];
-        if (!answer.IsEnd) diaSysNextDialogue.NextDialogue(curNode.GetAnswerList[butNum].GetNextNode);
+        if (!answer.IsEnd) diaSysNextDialogue.NextDialogue(answer.GetNextNode, answer.GetNextStateId);
         else diaSysNextDialogue.EndDialogue();
-
     }
 }

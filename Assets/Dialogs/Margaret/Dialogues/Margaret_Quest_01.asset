@@ -26,3 +26,4 @@ MonoBehaviour:
       \u0440\u0430\u0437\u044B\u0441\u043A\u0430\u0442\u044C"
     NextDialogue: {fileID: 0}
     isEnd: 1
+    nextStateId: 2

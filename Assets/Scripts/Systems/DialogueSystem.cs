@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogueSystem : MySystem, INextDIalogue
 {
     [SerializeField] private IDIalogueToUI dialogueToUi;
+    [SerializeField] private SO_DialogueTree curDialogueTree;
     
     private void Awake()
     {
@@ -14,7 +15,8 @@ public class DialogueSystem : MySystem, INextDIalogue
     
     public void StartDialogue(SO_DialogueTree dialogueTree)
     {
-        dialogueToUi.WriteNodeTextToUI(dialogueTree.GetDialogueNode());
+        curDialogueTree = dialogueTree;
+        dialogueToUi.WriteNodeTextToUI(curDialogueTree.GetDialogueNode());
     }
     public void StartDialogue(SO_DialogueNode dialogueNode)
     {
@@ -24,9 +26,9 @@ public class DialogueSystem : MySystem, INextDIalogue
     {
         dialogueToUi.EndDialogueWindow();
     }
-
-    public void NextDialogue(SO_DialogueNode node)
+    public void NextDialogue(SO_DialogueNode node, int stateID)
     {
+        curDialogueTree.ChangeDialogueState = stateID;
         StartDialogue(node);
     }
 }

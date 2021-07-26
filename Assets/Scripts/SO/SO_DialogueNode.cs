@@ -21,15 +21,13 @@ public class SO_DialogueNode : ScriptableObject
     public string GetNpcName { get { return npcName; } }
     public List<Answer> GetAnswerList { get { return MyAnswer; } }
     public string GetDialogueText { get { return DialogueText; } }
-
-
-
     [System.Serializable]
     public class Answer
     {
         [SerializeField] string text;
         [SerializeField] SO_DialogueNode NextDialogue;
         [SerializeField] bool isEnd;
+        [SerializeField] int nextStateId;
 
         public string GetText { get { return text; } }
         public SO_DialogueNode GetNextNode
@@ -45,6 +43,7 @@ public class SO_DialogueNode : ScriptableObject
             }
         }
         public bool IsEnd => isEnd;
+        public int GetNextStateId { get { return nextStateId; } }
     }
 
 }

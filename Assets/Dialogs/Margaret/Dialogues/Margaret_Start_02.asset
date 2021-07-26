@@ -21,7 +21,9 @@ MonoBehaviour:
   - text: "\u0412\u0437\u0433\u043B\u044F\u043D\u0438, \u044D\u0442\u043E \u043E\u043D?"
     NextDialogue: {fileID: 11400000, guid: 9a0a2c1e787fb3846aec26b4ddc89c92, type: 2}
     isEnd: 0
+    nextStateId: 3
   - text: "\u041F\u0440\u043E\u0441\u0442\u0438 \u043D\u043E \u043F\u043E\u043A\u0430
       \u043D\u0438\u0447\u0435\u0433\u043E"
     NextDialogue: {fileID: 0}
     isEnd: 1
+    nextStateId: 2

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface INextDIalogue 
 {
-    public void NextDialogue(SO_DialogueNode node);
+    public void NextDialogue(SO_DialogueNode node, int stateID);
     public void EndDialogue();
 }
