@@ -24,10 +24,10 @@ public class SO_DialogueNode : ScriptableObject
     [System.Serializable]
     public class Answer
     {
-        [SerializeField] string text;
-        [SerializeField] SO_DialogueNode NextDialogue;
-        [SerializeField] bool isEnd;
-        [SerializeField] int nextStateId;
+        [SerializeField] private string text;
+        [SerializeField] private SO_DialogueNode NextDialogue;
+        [SerializeField] private bool isEnd;
+        [SerializeField] private int nextStateId;
 
         public string GetText { get { return text; } }
         public SO_DialogueNode GetNextNode

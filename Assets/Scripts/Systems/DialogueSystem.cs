@@ -31,4 +31,8 @@ public class DialogueSystem : MySystem, INextDIalogue
         curDialogueTree.ChangeDialogueState = stateID;
         StartDialogue(node);
     }
+    public void ChangeDialogueStateOfNpc(SO_DialogueTree diaTree, int stateID)
+    {
+        diaTree.ChangeDialogueState = stateID;
+    }
 }
