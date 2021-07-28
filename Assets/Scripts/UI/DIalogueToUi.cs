@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //Верстка диалогов в Интерфейс
 public class DIalogueToUi : MonoBehaviour, IDIalogueToUI
 {
-    [SerializeField] private INextDIalogue diaSysNextDialogue;
+    [SerializeField] private INextDIalogue dialogueSystem;
 
     [SerializeField] private Text npcName;
     [SerializeField] private Text dialogue;
@@ -17,7 +17,7 @@ public class DIalogueToUi : MonoBehaviour, IDIalogueToUI
 
     private void Awake()
     {
-        diaSysNextDialogue = gameObject.GetComponent<INextDIalogue>();
+        dialogueSystem = gameObject.GetComponent<INextDIalogue>();
     }
     private void Start()
     {
@@ -56,10 +56,19 @@ public class DIalogueToUi : MonoBehaviour, IDIalogueToUI
     }
     public void StartDialogueWindow() { dialogueWindow.SetActive(true); }
     public void EndDialogueWindow() { dialogueWindow.SetActive(false); }
-    public void OperateButtonClick(int butNum)
+    public void AnswerClick(int butNum)
     {
         SO_DialogueNode.Answer answer = curNode.GetAnswerList[butNum];
-        if (!answer.IsEnd) diaSysNextDialogue.NextDialogue(answer.GetNextNode, answer.GetNextStateId);
-        else diaSysNextDialogue.EndDialogue();
+        if (answer.HaveQuest())
+        {
+            if (!answer.IsEnd) dialogueSystem.NextDialogue(answer.GetNextNode, answer.GetNextStateId, answer.GetQuest());
+            else dialogueSystem.EndDialogue();
+        }
+        else
+        {
+            if (!answer.IsEnd) dialogueSystem.NextDialogue(answer.GetNextNode, answer.GetNextStateId);
+            else dialogueSystem.EndDialogue();
+        }
+        
     }
 }

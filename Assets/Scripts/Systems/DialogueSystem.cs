@@ -7,10 +7,12 @@ public class DialogueSystem : MySystem, INextDIalogue
 {
     [SerializeField] private IDIalogueToUI dialogueToUi;
     [SerializeField] private SO_DialogueTree curDialogueTree;
+    [SerializeField] private IQuestAdd questAdd;
     
     private void Awake()
     {
         dialogueToUi = gameObject.GetComponent<IDIalogueToUI>();
+        questAdd = gameObject.GetComponent<IQuestAdd>();
     }
     
     public void StartDialogue(SO_DialogueTree dialogueTree)
@@ -30,6 +32,13 @@ public class DialogueSystem : MySystem, INextDIalogue
     {
         curDialogueTree.ChangeDialogueState = stateID;
         StartDialogue(node);
+    }
+    public void NextDialogue(SO_DialogueNode node, int stateID, SO_Quest quest)
+    {
+        curDialogueTree.ChangeDialogueState = stateID;
+        StartDialogue(node);
+        questAdd.AddNewQuest(quest);
+
     }
     public void ChangeDialogueStateOfNpc(SO_DialogueTree diaTree, int stateID)
     {

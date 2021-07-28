@@ -28,7 +28,17 @@ public class SO_DialogueNode : ScriptableObject
         [SerializeField] private SO_DialogueNode NextDialogue;
         [SerializeField] private bool isEnd;
         [SerializeField] private int nextStateId;
+        [SerializeField] private SO_Quest questStartNode;
 
+        public bool HaveQuest() 
+        {
+            if (questStartNode != null) return true;
+            else return false;
+        }
+        public SO_Quest GetQuest()
+        {
+            return questStartNode;
+        }
         public string GetText { get { return text; } }
         public SO_DialogueNode GetNextNode
         {

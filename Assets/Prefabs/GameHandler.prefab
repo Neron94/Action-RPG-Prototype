@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1444170758071473459}
   - component: {fileID: 1444170758071473612}
   - component: {fileID: 1444170758071473458}
+  - component: {fileID: 1517962370}
+  - component: {fileID: 1517962371}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -71,3 +73,47 @@ MonoBehaviour:
   - {fileID: 0}
   dialogueWindow: {fileID: 0}
   curNode: {fileID: 0}
+--- !u!114 &1517962370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bd5c5ed8406f64c8b95f7d74d366eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveQuests:
+  - {fileID: 0}
+  CompleteQuests: []
+--- !u!114 &1517962371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ec25064c4a9dd4194efa8279a5a796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  status:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allQuests:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  questCount: 0
+  maxQuest: 4

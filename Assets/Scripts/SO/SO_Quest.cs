@@ -7,17 +7,15 @@ using UnityEngine;
 public class SO_Quest : ScriptableObject
 {
     [SerializeField] private SO_DialogueTree npc;
-    [SerializeField] private string questDescription;
+    [SerializeField] private string questName;
     [SerializeField] private int ToStateIfComplete;
     [SerializeField] private enum Qtype { killTarget, GetItem };
     [SerializeField] private Qtype QuestType;
 
     private event Action OnQuestComplete;
-    private void OnEnable()
-    {
-        OnQuestComplete += QuestComplete;
-    }
 
+
+    public string GetQuestName() { return questName; }
     public void QuestEventInvoke()
     {
         OnQuestComplete?.Invoke();
@@ -37,5 +35,6 @@ public class SO_Quest : ScriptableObject
     {
         Debug.Log("Quest Complete");
         npc.ChangeDialogueState = ToStateIfComplete;
+        QuestEventInvoke();
     }
 }
