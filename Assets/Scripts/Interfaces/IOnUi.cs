@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IMoveTo
+public interface IOnUi
 {
-    public void MoveTo(Vector3 pos);
+    public void OnUICHange(bool isOnUi);
 }

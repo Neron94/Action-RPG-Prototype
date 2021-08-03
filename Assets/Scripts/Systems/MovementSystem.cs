@@ -1,21 +1,21 @@
 using UnityEngine;
 //Система обеспечивает перемещение сущностей
-public class MovementSystem : MySystem, IMoveTo
+public class MovementSystem : MySystem, IDialogueToUI
 {
-    [SerializeField] IGetSpeed speedOfMyEntity; //Адаптер для передачи скорости собственной сущности
-    [SerializeField] ISetAnimation setAnimation; // Адаптер для передачи команд аниматору
+    [SerializeField] private IGetSpeed speedOfMyEntity; //Адаптер для передачи скорости собственной сущности
+    [SerializeField] private ISetAnimation setAnimation; // Адаптер для передачи команд аниматору
 
-    [SerializeField] float step;
-    [SerializeField] float rotStep;
-    [SerializeField] float rotSpeed;
-    [SerializeField] float speed;
+    [SerializeField] private float step;
+    [SerializeField] private float rotStep;
+    [SerializeField] private float rotSpeed;
+    [SerializeField] private float speed;
 
-    [SerializeField] float notToMoveCloseArea; // Отступ от персонажа до точки куда начнет двигатся персонаж
-    [SerializeField] bool isMoving = false;
+    [SerializeField] private float notToMoveCloseArea; // Отступ от персонажа до точки куда начнет двигатся персонаж
+    [SerializeField] private bool isMoving = false;
 
-    [SerializeField] Vector3 targetPos;
+    [SerializeField] private Vector3 targetPos;
 
-    [SerializeField] Transform myTransform;
+    [SerializeField] private Transform myTransform;
 
 
     private void Awake()
@@ -35,9 +35,28 @@ public class MovementSystem : MySystem, IMoveTo
         myTransform = gameObject.transform;
 
     }
-    void Update()
+    private void Update()
     {
         if (isMoving) Moving();
+    }
+    private void StopMoving() //Остановка системы передвижения
+    {
+        isMoving = false;
+
+        if (setAnimation == null) Debug.LogError("No AnimationSystem on this GameObject");
+        else
+        {
+            setAnimation.SetAnimation("isMoving", isMoving);
+        }
+    }
+    private void Moving() //Реализовывает перемещение
+    {
+        step = speed * Time.deltaTime;
+        rotStep = rotSpeed * Time.deltaTime;
+        myTransform.position = Vector3.MoveTowards(myTransform.position, targetPos, step);
+        Quaternion toRotation = Quaternion.LookRotation(targetPos - myTransform.position, Vector3.up);
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, toRotation, rotStep);
+        if (myTransform.position == targetPos) StopMoving();
     }
 
     public void MoveTo(Vector3 movingTo) //Запуск системы передвижения
@@ -53,25 +72,6 @@ public class MovementSystem : MySystem, IMoveTo
         }
 
     }
-    void StopMoving() //Остановка системы передвижения
-    {
-        isMoving = false;
-
-        if (setAnimation == null) Debug.LogError("No AnimationSystem on this GameObject");
-        else
-        {
-            setAnimation.SetAnimation("isMoving", isMoving);
-        }
-    }
-
-    void Moving() //Реализовывает перемещение
-    {
-        step = speed * Time.deltaTime;
-        rotStep = rotSpeed * Time.deltaTime;
-        myTransform.position = Vector3.MoveTowards(myTransform.position, targetPos, step);
-        Quaternion toRotation = Quaternion.LookRotation(targetPos - myTransform.position, Vector3.up);
-        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, toRotation, rotStep);
-        if (myTransform.position == targetPos) StopMoving();
-    }
+   
 
 }

@@ -16,12 +16,15 @@ public class QuestSystem : MySystem, IQuestAdd
     public void AddNewQuest(SO_Quest quest) 
     {
         ActiveQuests.Add(quest);
-        questToUI.SetQUestToUI(quest);
+        questToUI.SetQuestToUI(quest);
+        quest.QuestEventManage += QuestComplete;
     }
     public void QuestComplete(SO_Quest quest)
     {
+        quest.QuestEventManage -= QuestComplete;
         questToUI.RemoveQuest(quest);
         ActiveQuests.Remove(quest);
         CompleteQuests.Add(quest);
+        
     }
 }

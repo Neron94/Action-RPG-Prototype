@@ -2000,10 +2000,8 @@ GameObject:
   - component: {fileID: 7460139497132908829}
   - component: {fileID: 7460139497139801781}
   - component: {fileID: 8557616828224686287}
-  - component: {fileID: 8557616828224686284}
   - component: {fileID: 4932931598175394043}
   - component: {fileID: 4932931598175394023}
-  - component: {fileID: 4932931597988412784}
   m_Layer: 0
   m_Name: '[Player] Shawn'
   m_TagString: Untagged
@@ -2068,18 +2066,6 @@ MonoBehaviour:
   isMoving: 0
   targetPos: {x: 0, y: 0, z: 0}
   myTransform: {fileID: 0}
---- !u!114 &8557616828224686284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7460139497132424509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cf8e9144bd2734f9bf3c7eac232cd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4932931598175394043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,7 +2078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36a5ca116aae8b4d89186515503c484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameEntity: 
+  nameEntity: Shawn
   myStats: {fileID: 11400000, guid: 45788269f6112014a8b2e31a2ed5f768, type: 2}
 --- !u!114 &4932931598175394023
 MonoBehaviour:
@@ -2107,19 +2093,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 0}
---- !u!114 &4932931597988412784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7460139497132424509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aaf82c310feb83408ff65a6eb74699c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionDistace: 2
 --- !u!1 &7460139497132424511
 GameObject:
   m_ObjectHideFlags: 0

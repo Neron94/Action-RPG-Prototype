@@ -5,7 +5,8 @@ using UnityEngine;
 // Система обеспечивает проверку Интерактивна ли сущность по которой произошел клик
 public class InteractionSystem : MySystem, IInteractionRay
 {
-    [SerializeField] float interactionDistace = 2; //Оптимальная дистанция до интерактивного обьекта По умолчанию для этой сцены
+    [SerializeField] private float interactionDistace = 2; //Оптимальная дистанция до интерактивного обьекта По умолчанию для этой сцены
+    [SerializeField] private GameObject player;
 
     public GameObject IsHaveObjectOnRay()
     {
@@ -16,7 +17,7 @@ public class InteractionSystem : MySystem, IInteractionRay
         if (rayHit.collider.gameObject)
         {
             GameObject curGameobject = rayHit.collider.gameObject;
-            float distPlayerObject = Vector3.Distance(transform.position, curGameobject.transform.position);
+            float distPlayerObject = Vector3.Distance(player.transform.position, curGameobject.transform.position);
 
             if (distPlayerObject <= interactionDistace)
             {
@@ -29,3 +30,4 @@ public class InteractionSystem : MySystem, IInteractionRay
         else return null;
     }
 }
+    

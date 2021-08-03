@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e4ad6467ede4f458887948fa6c9775, type: 3}
-  m_Name: Margaret_QuestTree
+  m_Script: {fileID: 11500000, guid: d5cadee27e53cd341980e62cd46ec055, type: 3}
+  m_Name: Staff
   m_EditorClassIdentifier: 
-  npcName: Margaret
-  allQuests:
-  - {fileID: 11400000, guid: 74a6f7203428fa34d8859663eb80e15f, type: 2}
+  itemName: '[QuestItem] Margaret Staff'
+  itemType: 2

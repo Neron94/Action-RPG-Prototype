@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1444170758071473458}
   - component: {fileID: 1517962370}
   - component: {fileID: 1517962371}
+  - component: {fileID: 6161864349228350873}
+  - component: {fileID: 6260605221716323}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -85,8 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bd5c5ed8406f64c8b95f7d74d366eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveQuests:
-  - {fileID: 0}
+  ActiveQuests: []
   CompleteQuests: []
 --- !u!114 &1517962371
 MonoBehaviour:
@@ -110,10 +111,36 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  allQuests:
+  questContainersUI:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   questCount: 0
   maxQuest: 4
+--- !u!114 &6161864349228350873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cf8e9144bd2734f9bf3c7eac232cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOnUI: 0
+--- !u!114 &6260605221716323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aaf82c310feb83408ff65a6eb74699c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistace: 2

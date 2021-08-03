@@ -9,28 +9,26 @@ public class SO_Quest : ScriptableObject
     [SerializeField] private SO_DialogueTree npc;
     [SerializeField] private string questName;
     [SerializeField] private int ToStateIfComplete;
-    [SerializeField] private enum Qtype { killTarget, GetItem };
-    [SerializeField] private Qtype QuestType;
-
-    private event Action OnQuestComplete;
 
 
-    public string GetQuestName() { return questName; }
+    private event Action<SO_Quest> QuestCompleteEvent;
     public void QuestEventInvoke()
     {
-        OnQuestComplete?.Invoke();
+        QuestCompleteEvent?.Invoke(this);
     }
-    public event Action QuestEventManage
+    public event Action<SO_Quest> QuestEventManage
     {
         add
         {
-            OnQuestComplete += value;
+            QuestCompleteEvent += value;
         }
         remove
         {
-            OnQuestComplete -= value;
+            QuestCompleteEvent -= value;
         }
     }
+
+    public string GetQuestName() { return questName; }
     public void QuestComplete()
     {
         Debug.Log("Quest Complete");

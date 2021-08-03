@@ -7,7 +7,7 @@ public class QuestToUI : MonoBehaviour, IQuestToUi
 {
     [SerializeField] private List<Text> questName;
     [SerializeField] private List<Text> status;
-    [SerializeField] private List<GameObject> allQuests;
+    [SerializeField] private List<GameObject> questContainersUI;
     [SerializeField] private int questCount;
     [SerializeField] private int maxQuest = 4;
 
@@ -16,7 +16,7 @@ public class QuestToUI : MonoBehaviour, IQuestToUi
         HideQuestPanels();
     }
 
-    public void SetQUestToUI(SO_Quest quest)
+    public void SetQuestToUI(SO_Quest quest)
     {
         if(questCount < maxQuest) questCount++;
         HideQuestPanels();
@@ -30,13 +30,13 @@ public class QuestToUI : MonoBehaviour, IQuestToUi
         int iterationCounter = 0;
         while(questCount > iterationCounter)
         {
-            allQuests[iterationCounter].SetActive(true);
+            questContainersUI[iterationCounter].SetActive(true);
             iterationCounter++;
         }
     }
     private void HideQuestPanels()
     {
-        foreach (GameObject panel in allQuests)
+        foreach (GameObject panel in questContainersUI)
         {
             panel.SetActive(false);
         }
