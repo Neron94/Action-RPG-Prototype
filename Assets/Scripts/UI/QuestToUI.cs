@@ -14,6 +14,7 @@ public class QuestToUI : MonoBehaviour, IQuestToUi
     private void Start()
     {
         HideQuestPanels();
+        ShowQuestPanels();
     }
 
     public void SetQuestToUI(SO_Quest quest)

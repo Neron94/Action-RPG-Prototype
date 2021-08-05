@@ -27,3 +27,4 @@ MonoBehaviour:
     NextDialogue: {fileID: 0}
     isEnd: 1
     nextStateId: 2
+    questStartNode: {fileID: 0}

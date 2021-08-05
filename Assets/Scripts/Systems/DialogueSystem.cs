@@ -17,6 +17,14 @@ public class DialogueSystem : MySystem, INextDIalogue
         questAdd = gameObject.GetComponent<IQuestAdd>();
         OnUI = gameObject.GetComponent<IOnUi>();
     }
+    private IEnumerator WaitAfterCloseDialogue()
+    {
+        print("Start");
+        yield return new WaitForSeconds(0.2f);
+        OnUI.OnUICHange(isInDialogue);
+        StopCoroutine(WaitAfterCloseDialogue());
+        print("Stop");
+    }
     
     public void StartDialogue(SO_DialogueTree dialogueTree)
     {
@@ -36,7 +44,7 @@ public class DialogueSystem : MySystem, INextDIalogue
     {
         dialogueToUi.EndDialogueWindow();
         isInDialogue = false;
-        OnUI.OnUICHange(isInDialogue);
+        StartCoroutine(WaitAfterCloseDialogue());
     }
     public void NextDialogue(SO_DialogueNode node, int stateID)
     {
@@ -54,4 +62,5 @@ public class DialogueSystem : MySystem, INextDIalogue
     {
         diaTree.ChangeDialogueState = stateID;
     }
+
 }

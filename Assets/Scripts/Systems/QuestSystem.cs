@@ -1,30 +1,54 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestSystem : MySystem, IQuestAdd
+public class QuestSystem : MySystem, IQuestAdd, IExaminationQuest
 {
-    private IQuestToUi questToUI;
+    [SerializeField] private IQuestToUi questToUI;
+    [SerializeField] private IInventoryManage inventoryManager;
     [SerializeField] private List<SO_Quest> ActiveQuests;
     [SerializeField] private List<SO_Quest> CompleteQuests;
 
     private void Awake()
     {
         questToUI = gameObject.GetComponent<IQuestToUi>();
+        inventoryManager = gameObject.GetComponent<InventorySystem>();
     }
 
     public void AddNewQuest(SO_Quest quest) 
     {
         ActiveQuests.Add(quest);
         questToUI.SetQuestToUI(quest);
-        quest.QuestEventManage += QuestComplete;
+        quest.QuestEventManage += QuestEnd;
     }
-    public void QuestComplete(SO_Quest quest)
+    public void QuestEnd(SO_Quest quest)
     {
-        quest.QuestEventManage -= QuestComplete;
+        quest.QuestEventManage -= QuestEnd;
         questToUI.RemoveQuest(quest);
         ActiveQuests.Remove(quest);
         CompleteQuests.Add(quest);
-        
+        quest.GetNpc().ChangeDialogueState = quest.GetStateOfDialogueToNpc();
+    }
+    public void ExaminationQuests()
+    {
+        foreach(SO_Quest quest in ActiveQuests)
+        {
+            if (Condition(quest))
+            {
+                quest.QuestComplete();
+            }
+        }
+    }
+    public bool Condition(SO_Quest quest)
+    {
+        if (inventoryManager.GetCountOfItemsInInventory(quest.GetQuestItem()) >= quest.GetQuestItemCount())
+        {
+            print("COndition OK");
+            return true;
+        }
+        else
+        {
+            print(inventoryManager.GetCountOfItemsInInventory(quest.GetQuestItem()));
+            return false;
+        }
     }
 }

@@ -13,26 +13,24 @@ public class InputSystem : MySystem, IOnUi
         movementSys = player.GetComponent<IDialogueToUI>();
         interactionSys = gameObject.GetComponent<IInteractionRay>();
     }
-
     private void Update()
     {
-        if(isOnUI == false)
+        if (Input.GetMouseButton(1)) SendPosToMove();
+        if (Input.GetMouseButtonUp(0))
         {
-            if (Input.GetMouseButton(1)) SendPosToMove();
-            if (Input.GetMouseButtonUp(0))
+            if (!interactionSys.IsHaveObjectOnRay())
             {
-                if (!interactionSys.IsHaveObjectOnRay())
-                {
-                    SendPosToMove();
-                }
+                SendPosToMove();
             }
         }
     }
-
-    void SendPosToMove()
+    private void SendPosToMove()
     {
-        Vector3 positionToMove = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 12)); // 12 в позиции Z €вл€етс€ корректным дл€ данной камеры
-        movementSys.MoveTo(new Vector3(positionToMove.x, 0.1f, positionToMove.z));
+        if (isOnUI == false)
+        {
+            Vector3 positionToMove = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 12)); // 12 в позиции Z €вл€етс€ корректным дл€ данной камеры
+            movementSys.MoveTo(new Vector3(positionToMove.x, 0.1f, positionToMove.z));
+        }
     }
 
     public void OnUICHange(bool onUI) => isOnUI = onUI;

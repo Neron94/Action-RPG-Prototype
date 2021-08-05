@@ -5,15 +5,18 @@ using UnityEngine;
 public class Item : MonoBehaviour, IInteraction
 {
     [SerializeField] private SO_ItemInfo itemInfo;
+    [SerializeField] private static IInventoryManage inventoryManager;
+    
     
     private void Start()
     {
         gameObject.name = itemInfo.GetItemName();
+        inventoryManager = GameObject.Find("GameHandler").GetComponent<IInventoryManage>();
     }
-    
-    public void PickItem()
+    private void PickItem()
     {
         gameObject.SetActive(false);
+        inventoryManager.AddToInventory(gameObject);
     }
 
     public void Interact()

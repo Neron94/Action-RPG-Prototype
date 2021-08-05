@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestItem : Item
+public interface IExaminationQuest
 {
- 
+    public void ExaminationQuests();
 }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8fd6fb1388bdc2489ddb93f408d23eb, type: 3}
-  m_Name: MargaretQuest
+  m_Name: MargaretStaff
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: d540595ea9ff4a04c9d98ed183fef689, type: 2}
-  questName: FInd Margaret Staff
+  questName: Marg Staff
   ToStateIfComplete: 4
-  QuestType: 1
+  questItem: {fileID: 3291552689436464987, guid: ca5f629cc8d489541b7075f2dd94037f, type: 3}
+  questItemCount: 1
