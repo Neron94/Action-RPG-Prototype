@@ -17,6 +17,8 @@ public class Item : MonoBehaviour, IInteraction
     {
         gameObject.SetActive(false);
         inventoryManager.AddToInventory(gameObject);
+        transform.GetComponent<Rigidbody>().useGravity = false;
+        transform.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     public void Interact()

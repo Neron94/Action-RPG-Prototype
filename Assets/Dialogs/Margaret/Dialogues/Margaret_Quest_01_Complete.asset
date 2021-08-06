@@ -23,5 +23,5 @@ MonoBehaviour:
       \u043F\u043E\u0442\u0435\u0440\u044E.."
     NextDialogue: {fileID: 11400000, guid: 9a0a2c1e787fb3846aec26b4ddc89c92, type: 2}
     isEnd: 0
-    nextStateId: 1
+    nextStateId: 3
     questStartNode: {fileID: 0}

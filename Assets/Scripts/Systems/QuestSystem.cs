@@ -13,6 +13,20 @@ public class QuestSystem : MySystem, IQuestAdd, IExaminationQuest
         questToUI = gameObject.GetComponent<IQuestToUi>();
         inventoryManager = gameObject.GetComponent<InventorySystem>();
     }
+    private void QuestRemoveFromActive()
+    {
+        foreach(SO_Quest c_quest in CompleteQuests)
+        {
+            foreach(SO_Quest a_quest in ActiveQuests)
+            {
+                if (c_quest == a_quest)
+                {
+                    ActiveQuests.Remove(a_quest);
+                    break;
+                }
+            }
+        }
+    }
 
     public void AddNewQuest(SO_Quest quest) 
     {
@@ -24,7 +38,6 @@ public class QuestSystem : MySystem, IQuestAdd, IExaminationQuest
     {
         quest.QuestEventManage -= QuestEnd;
         questToUI.RemoveQuest(quest);
-        ActiveQuests.Remove(quest);
         CompleteQuests.Add(quest);
         quest.GetNpc().ChangeDialogueState = quest.GetStateOfDialogueToNpc();
     }
@@ -37,6 +50,7 @@ public class QuestSystem : MySystem, IQuestAdd, IExaminationQuest
                 quest.QuestComplete();
             }
         }
+        QuestRemoveFromActive();
     }
     public bool Condition(SO_Quest quest)
     {
@@ -51,4 +65,5 @@ public class QuestSystem : MySystem, IQuestAdd, IExaminationQuest
             return false;
         }
     }
+    
 }
