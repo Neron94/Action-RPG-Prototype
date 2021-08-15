@@ -5,6 +5,7 @@ public class InputSystem : MySystem, IOnUi
 {
     [SerializeField] private IDialogueToUI movementSys;
     [SerializeField] private IInteractionRay interactionSys;
+    [SerializeField] private IInventoryWindow inventoryWindowManager;
     [SerializeField] private bool isOnUI = false;
     [SerializeField] private GameObject player;
 
@@ -12,6 +13,7 @@ public class InputSystem : MySystem, IOnUi
     {
         movementSys = player.GetComponent<IDialogueToUI>();
         interactionSys = gameObject.GetComponent<IInteractionRay>();
+        inventoryWindowManager = gameObject.GetComponent<IInventoryWindow>();
     }
     private void Update()
     {
@@ -23,6 +25,7 @@ public class InputSystem : MySystem, IOnUi
                 SendPosToMove();
             }
         }
+        if (Input.GetKeyDown(KeyCode.I)) InventoryWindow();
     }
     private void SendPosToMove()
     {
@@ -32,6 +35,11 @@ public class InputSystem : MySystem, IOnUi
             movementSys.MoveTo(new Vector3(positionToMove.x, 0.1f, positionToMove.z));
         }
     }
+    private void InventoryWindow()
+    {
+        inventoryWindowManager.InventoryWindowManager();
+    }
 
     public void OnUICHange(bool onUI) => isOnUI = onUI;
+    
 }

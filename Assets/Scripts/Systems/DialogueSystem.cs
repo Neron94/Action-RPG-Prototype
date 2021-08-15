@@ -19,11 +19,9 @@ public class DialogueSystem : MySystem, INextDIalogue
     }
     private IEnumerator WaitAfterCloseDialogue()
     {
-        print("Start");
         yield return new WaitForSeconds(0.2f);
         OnUI.OnUICHange(isInDialogue);
         StopCoroutine(WaitAfterCloseDialogue());
-        print("Stop");
     }
     
     public void StartDialogue(SO_DialogueTree dialogueTree)

@@ -25,5 +25,6 @@ public class Item : MonoBehaviour, IInteraction
     {
         PickItem();
     }
+    public SO_ItemInfo GetItemInfo() { return itemInfo; }
 }
 

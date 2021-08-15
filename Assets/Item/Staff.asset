@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: '[QuestItem] Margaret Staff'
   itemType: 2
   itemWeight: 1.2
+  itemIcon: {fileID: 21300000, guid: f31956cb340889a468146d99f09662bf, type: 3}

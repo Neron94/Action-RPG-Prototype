@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: '[Weapon] Axe'
   itemType: 0
   itemWeight: 1
+  itemIcon: {fileID: 21300000, guid: 48dee0a319de30241960ddfc9b37510a, type: 3}

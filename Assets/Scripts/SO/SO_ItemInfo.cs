@@ -7,9 +7,11 @@ public class SO_ItemInfo : ScriptableObject
 {
     [SerializeField] private string itemName;
     private enum itemEnum { Weapon, Armor, QuestItem };
-    [SerializeField] itemEnum itemType;
-    [SerializeField] float itemWeight;
+    [SerializeField] private itemEnum itemType;
+    [SerializeField] private float itemWeight;
+    [SerializeField] private Sprite itemIcon;
 
+    public Sprite GetIcon() { return itemIcon; }
     public string GetItemName()
     {
         return itemName;

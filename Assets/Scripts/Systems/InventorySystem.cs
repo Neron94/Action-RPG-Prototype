@@ -6,16 +6,20 @@ public class InventorySystem : MySystem, IInventoryManage
 {
     [SerializeField] private List<GameObject> itemsList;
     [SerializeField] private IExaminationQuest questExamine;
+    [SerializeField] private IInventoryToUi inventoryToUi;
 
     private void Awake()
     {
         questExamine = gameObject.GetComponent<IExaminationQuest>();
+        inventoryToUi = gameObject.GetComponent<IInventoryToUi>();
     }
+    
     public List<GameObject> GetInventory() { return itemsList; }
     public void AddToInventory(GameObject item)
     {
         itemsList.Add(item);
         questExamine.ExaminationQuests();
+        inventoryToUi.AddItemsToUI(itemsList);
     }
     public int GetCountOfItemsInInventory(GameObject item)
     {
