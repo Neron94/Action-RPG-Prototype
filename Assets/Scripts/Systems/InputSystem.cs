@@ -3,7 +3,7 @@ using UnityEngine;
 //Система оперирует вводными данными игрока
 public class InputSystem : MySystem, IOnUi
 {
-    [SerializeField] private IDialogueToUI movementSys;
+    [SerializeField] private IMoveTo movementSys;
     [SerializeField] private IInteractionRay interactionSys;
     [SerializeField] private IInventoryWindow inventoryWindowManager;
     [SerializeField] private bool isOnUI = false;
@@ -11,7 +11,7 @@ public class InputSystem : MySystem, IOnUi
 
     private void Awake()
     {
-        movementSys = player.GetComponent<IDialogueToUI>();
+        movementSys = player.GetComponent<IMoveTo>();
         interactionSys = gameObject.GetComponent<IInteractionRay>();
         inventoryWindowManager = gameObject.GetComponent<IInventoryWindow>();
     }

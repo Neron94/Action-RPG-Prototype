@@ -21,8 +21,11 @@ public class DragAndDropManager : MySystem, IDragHandler, IBeginDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        print("OnBeginDrag");
-        canGroup.blocksRaycasts = false;
+        if (myItemSlotController.IsBusy() == true)
+        {
+            canGroup.blocksRaycasts = false;
+            DragSys.GetDragingItemSlot = myItemSlotController;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -30,13 +33,15 @@ public class DragAndDropManager : MySystem, IDragHandler, IBeginDragHandler, IEn
         if(myItemSlotController.IsBusy() == true)
         {
             rectTransform.anchoredPosition += eventData.delta / dragAndDropSys.GetCanvas().scaleFactor;
+            DragSys.IsDraging = true;
         } 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition = new Vector2(0,0);
-        DragSys.GetDragingItemSlot = myItemSlotController;
+        DragSys.IsDraging = false;
         canGroup.blocksRaycasts = true;
+
     }
 }

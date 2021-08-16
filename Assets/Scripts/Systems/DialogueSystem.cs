@@ -10,7 +10,7 @@ public class DialogueSystem : MySystem, INextDIalogue
     [SerializeField] private SO_DialogueTree curDialogueTree;
     [SerializeField] private IQuestAdd questAdd;
     [SerializeField] private bool isInDialogue = false;
-    
+
     private void Awake()
     {
         dialogueToUi = gameObject.GetComponent<IDIalogueToUI>();
@@ -23,7 +23,7 @@ public class DialogueSystem : MySystem, INextDIalogue
         OnUI.OnUICHange(isInDialogue);
         StopCoroutine(WaitAfterCloseDialogue());
     }
-    
+
     public void StartDialogue(SO_DialogueTree dialogueTree)
     {
         curDialogueTree = dialogueTree;

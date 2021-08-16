@@ -7,6 +7,19 @@ public class DragAndDropSystem : MonoBehaviour
 {
     [SerializeField] private Canvas mainCanvas;
     [SerializeField] private ItemSlotController dragingItem;
+    [SerializeField] private bool isDraging = false;
+
+    public bool IsDraging
+    {
+        get
+        {
+            return isDraging;
+        }
+        set
+        {
+            isDraging = value;
+        }
+    }
 
     public ItemSlotController GetDragingItemSlot 
     {

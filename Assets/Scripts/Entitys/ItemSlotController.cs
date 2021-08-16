@@ -38,6 +38,7 @@ public class ItemSlotController : MySystem, IDropHandler
         icon.sprite = item.GetComponent<Item>().GetItemInfo().GetIcon();
         curItemInSlot = item;
     }
+
     public void SlotClear()
     {
         isBusy = false;
@@ -47,10 +48,14 @@ public class ItemSlotController : MySystem, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        ItemSlotController tempDragItem = DragSys.GetDragingItemSlot;
-        GameObject tempItem = tempDragItem.AddOrRemoveItem;
-        if (isBusy) tempDragItem.SlotInit(curItemInSlot);
-        else tempDragItem.SlotClear();
-        SlotInit(tempItem);   
+        if(DragSys.IsDraging)
+        {
+            ItemSlotController tempDragItem = DragSys.GetDragingItemSlot;
+            GameObject tempItem = tempDragItem.AddOrRemoveItem;
+            if (isBusy) tempDragItem.SlotInit(curItemInSlot);
+            else tempDragItem.SlotClear();
+            SlotInit(tempItem);
+        }
+         
     }
 }

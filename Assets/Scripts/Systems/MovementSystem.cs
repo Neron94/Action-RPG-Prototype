@@ -1,6 +1,6 @@
 using UnityEngine;
 //Система обеспечивает перемещение сущностей
-public class MovementSystem : MySystem, IDialogueToUI
+public class MovementSystem : MySystem, IMoveTo
 {
     [SerializeField] private IGetSpeed speedOfMyEntity; //Адаптер для передачи скорости собственной сущности
     [SerializeField] private ISetAnimation setAnimation; // Адаптер для передачи команд аниматору
@@ -10,7 +10,7 @@ public class MovementSystem : MySystem, IDialogueToUI
     [SerializeField] private float rotSpeed;
     [SerializeField] private float speed;
 
-    [SerializeField] private float notToMoveCloseArea; // Отступ от персонажа до точки куда начнет двигатся персонаж
+    [SerializeField] private float notToMoveCloseArea = 0.5f; // Отступ от персонажа до точки куда начнет двигатся персонаж 
     [SerializeField] private bool isMoving = false;
 
     [SerializeField] private Vector3 targetPos;
@@ -71,6 +71,11 @@ public class MovementSystem : MySystem, IDialogueToUI
             setAnimation.SetAnimation("isMoving", isMoving);
         }
 
+    }
+
+    public void TESTScript()
+    {
+        MoveTo(new Vector3(Random.Range(10,25),0, Random.Range(10, 25)));
     }
    
 
