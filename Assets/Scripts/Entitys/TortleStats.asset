@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f395e9eaaa5432a45a6e8f88e10e475c, type: 3}
   m_Name: TortleStats
   m_EditorClassIdentifier: 
-  movSpeed: 3
+  movSpeed: 2
   rotSpeed: 3
