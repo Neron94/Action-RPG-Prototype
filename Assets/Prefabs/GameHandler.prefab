@@ -17,6 +17,11 @@ GameObject:
   - component: {fileID: 6260605221716323}
   - component: {fileID: 1175022824}
   - component: {fileID: 1175022825}
+  - component: {fileID: 1690942736}
+  - component: {fileID: 1690942737}
+  - component: {fileID: 1690942742}
+  - component: {fileID: 1690942744}
+  - component: {fileID: 1690942746}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -176,3 +181,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPointOne: {fileID: 0}
   weaponPointTwo: {fileID: 0}
+  isEquipedOne: 0
+  isEquipedTwo: 0
+--- !u!114 &1690942736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5c9de18de764943973374f531f91cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlotsInventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  equipmentSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  InventoryWindow: {fileID: 0}
+  isInventoryOpen: 0
+--- !u!114 &1690942737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31a1851bb16994595afa09b032f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expGrid: 640000002c010000bc020000dc050000b80b00009411000070170000401f0000e02e0000983a0000
+  curLevel: 0
+  expirienceCount: 0
+  statSystem: {fileID: 0}
+--- !u!114 &1690942742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e79d300d3c5a6478044d317970f64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCanvas: {fileID: 0}
+  dragingItem: {fileID: 0}
+  isDraging: 0
+--- !u!114 &1690942744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5d0097e6304134890359555bdc90a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: 8d119695c4db0694a981e3c53236039e, type: 2}
+  skillPoints: 0
+  skillPointsOnLevel: 2
+  baseStatsValue: 10
+  baseSkillsAddToStats: 10
+--- !u!114 &1690942746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444170758071473613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4817b3901d59be343afe7ff52a78f977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBar: {fileID: 0}
+  hpText: {fileID: 0}
+  expBar: {fileID: 0}
+  expText: {fileID: 0}
+  curLevel: {fileID: 0}
+  playerIcon: {fileID: 0}

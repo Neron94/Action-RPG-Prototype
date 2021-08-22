@@ -9,8 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f395e9eaaa5432a45a6e8f88e10e475c, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: 799af4517af286540b0b608b593e3b60, type: 3}
+  m_Name: '[Player] Stats'
   m_EditorClassIdentifier: 
   movSpeed: 5
   rotSpeed: 5
+  baseDamage: 550
+  baseAttackSpeed: 420
+  baseDodge: 0
+  baseDefence: 0
+  maxHp: 500
+  curHp: 150
+  baseCarrying: 130
+  hpRecovery: 0
+  power: 19
+  agility: 2
+  vitality: 3

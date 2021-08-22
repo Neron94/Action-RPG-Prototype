@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameEntity: 
-  myStats: {fileID: 11400000, guid: 1aebd737bfbedc64f98c0ac1257ece12, type: 2}
+  myStats: {fileID: 11400000, guid: 3114c50c203d63a4eb5feb892ba000d7, type: 2}
 --- !u!114 &1435421694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
   movementSys: {fileID: 0}
   intruderObject: {fileID: 0}
   pursuitDistance: 7
-  distToAttack: 2
+  distToAttack: 0.8
   isStateActive: 0
 --- !u!114 &1435421698
 MonoBehaviour:
